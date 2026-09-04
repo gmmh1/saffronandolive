@@ -1,549 +1,2452 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saffron & Olive Meditaria</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saffron & Olive Meditaria</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      color: white;
-      background:
-        linear-gradient(rgba(10, 20, 18, 0.65), rgba(10, 20, 18, 0.85)),
-        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4")
-        center/cover fixed;
-      min-height: 100vh;
-    }
-
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      max-width: 1100px;
-      padding: 15px 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      border-radius: 20px;
-      z-index: 100;
-    }
-
-    .logo {
-      font-size: 1.3rem;
-      font-weight: bold;
-      color: #f4c95d;
-    }
-
-    nav ul {
-      display: flex;
-      gap: 25px;
-      list-style: none;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #f4c95d;
-    }
-
-    /* Hero */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 100px 20px;
-    }
-
-    .glass {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-      border-radius: 30px;
-    }
-
-    .hero-content {
-      padding: 60px 40px;
-      max-width: 800px;
-    }
-
-    .hero h1 {
-      font-size: clamp(3rem, 8vw, 6rem);
-      color: #f4c95d;
-      margin-bottom: 15px;
-    }
-
-    .hero h2 {
-      font-size: 1.7rem;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      color: #eee;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      margin-bottom: 30px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 50px;
-      background: #f4c95d;
-      color: #17231f;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      background: #fff;
-    }
-
-    /* Sections */
-    section {
-      padding: 100px 20px;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .section-title h2 {
-      font-size: 2.7rem;
-      color: #f4c95d;
-      margin-bottom: 10px;
-    }
-
-    .section-title p {
-      color: #ddd;
-    }
-
-    /* Menu */
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 25px;
-    }
-
-    .menu-card {
-      padding: 30px;
-      transition: 0.3s;
-    }
-
-    .menu-card:hover {
-      transform: translateY(-8px);
-      background: rgba(255,255,255,0.18);
-    }
-
-    .menu-card span {
-      font-size: 2.5rem;
-    }
-
-    .menu-card h3 {
-      margin: 15px 0 10px;
-      color: #f4c95d;
-    }
-
-    .menu-card p {
-      color: #ddd;
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
-
-    .price {
-      font-weight: bold;
-      color: white;
-    }
-
-    /* About */
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .about-card {
-      padding: 40px;
-    }
-
-    .about-card h2 {
-      color: #f4c95d;
-      margin-bottom: 20px;
-      font-size: 2.3rem;
-    }
-
-    .about-card p {
-      line-height: 1.8;
-      color: #ddd;
-    }
-
-    /* Reservation */
-    .reservation {
-      max-width: 650px;
-      margin: auto;
-      padding: 40px;
-    }
-
-    form {
-      display: grid;
-      gap: 15px;
-    }
-
-    input, select {
-      width: 100%;
-      padding: 15px;
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 12px;
-      outline: none;
-      color: white;
-      background: rgba(255,255,255,0.1);
-    }
-
-    input::placeholder {
-      color: #ccc;
-    }
-
-    select option {
-      color: black;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      background: rgba(0,0,0,0.3);
-      color: #ccc;
-    }
-
-    footer strong {
-      color: #f4c95d;
-    }
-
-    /* Mobile */
-    @media (max-width: 700px) {
-      nav {
-        width: 94%;
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
       }
 
-      nav ul {
-        gap: 10px;
-        font-size: 0.8rem;
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        color: white;
+        background:
+          linear-gradient(rgba(10, 20, 18, 0.65), rgba(10, 20, 18, 0.85)),
+          url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4")
+            center/cover fixed;
+        min-height: 100vh;
+      }
+
+      /* Navigation */
+      nav {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 1100px;
+        padding: 15px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-radius: 20px;
+        z-index: 100;
       }
 
       .logo {
-        font-size: 1rem;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #f4c95d;
+      }
+
+      nav ul {
+        display: flex;
+        gap: 25px;
+        list-style: none;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      nav a:hover {
+        color: #f4c95d;
+      }
+
+      /* Hero */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 100px 20px;
+      }
+
+      .glass {
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        border-radius: 30px;
       }
 
       .hero-content {
-        padding: 40px 20px;
+        padding: 60px 40px;
+        max-width: 800px;
       }
 
-      .about {
-        grid-template-columns: 1fr;
+      .hero h1 {
+        font-size: clamp(3rem, 8vw, 6rem);
+        color: #f4c95d;
+        margin-bottom: 15px;
       }
 
+      .hero h2 {
+        font-size: 1.7rem;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        color: #eee;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: 30px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 14px 28px;
+        border-radius: 50px;
+        background: #f4c95d;
+        color: #17231f;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        background: #fff;
+      }
+
+      /* Sections */
       section {
-        padding: 70px 15px;
+        padding: 100px 20px;
       }
-    }
-  </style>
-</head>
 
-<body>
+      .container {
+        max-width: 1100px;
+        margin: auto;
+      }
 
-  <!-- Navigation -->
-  <nav>
-    <div class="logo">Saffron & Olive</div>
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
 
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#reserve">Reserve</a></li>
-    </ul>
-  </nav>
+      .section-title h2 {
+        font-size: 2.7rem;
+        color: #f4c95d;
+        margin-bottom: 10px;
+      }
 
+      .section-title p {
+        color: #ddd;
+      }
 
-  <!-- Hero -->
-  <header class="hero" id="home">
-    <div class="hero-content glass">
+      /* Menu tabs */
+      .menu-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
 
-      <h1>Saffron & Olive</h1>
+      .tab-btn {
+        padding: 12px 26px;
+        border-radius: 50px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.08);
+        color: #eee;
+        font-weight: bold;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.3s;
+      }
 
-      <h2>Meditaria • Mediterranean & Indian Cuisine</h2>
+      .tab-btn:hover {
+        background: rgba(255, 255, 255, 0.18);
+      }
+
+      .tab-btn.active {
+        background: #f4c95d;
+        color: #17231f;
+        border-color: #f4c95d;
+      }
+
+      .menu-panel {
+        display: none;
+      }
+
+      .menu-panel.active {
+        display: block;
+      }
+
+      .menu-legend {
+        text-align: center;
+        color: #bbb;
+        font-size: 0.85rem;
+        font-style: italic;
+        margin-bottom: 45px;
+      }
+
+      .menu-category {
+        margin-bottom: 45px;
+      }
+
+      .menu-category h3 {
+        color: #f4c95d;
+        font-size: 1.5rem;
+        margin-bottom: 6px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(244, 201, 93, 0.3);
+      }
+
+      .menu-category h4 {
+        color: #f4c95d;
+        font-size: 1.05rem;
+        margin: 18px 0 6px;
+      }
+
+      .category-note {
+        color: #bbb;
+        font-style: italic;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+      }
+
+      .menu-list {
+        list-style: none;
+      }
+
+      .menu-list li {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 20px;
+        padding: 12px 0;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
+      }
+
+      .menu-list li:last-child {
+        border-bottom: none;
+      }
+
+      .item-info {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .item-name {
+        font-weight: bold;
+        color: white;
+      }
+
+      .item-desc {
+        color: #ccc;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .item-price {
+        color: #f4c95d;
+        font-weight: bold;
+        white-space: nowrap;
+        text-align: right;
+      }
+
+      /* About */
+      .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .about-card {
+        padding: 40px;
+      }
+
+      .about-card h2 {
+        color: #f4c95d;
+        margin-bottom: 20px;
+        font-size: 2.3rem;
+      }
+
+      .about-card p {
+        line-height: 1.8;
+        color: #ddd;
+      }
+
+      /* Reservation */
+      .reservation {
+        max-width: 650px;
+        margin: auto;
+        padding: 40px;
+      }
+
+      form {
+        display: grid;
+        gap: 15px;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        outline: none;
+        color: white;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      input::placeholder {
+        color: #ccc;
+      }
+
+      select option {
+        color: black;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 40px 20px;
+        background: rgba(0, 0, 0, 0.3);
+        color: #ccc;
+      }
+
+      footer strong {
+        color: #f4c95d;
+      }
+
+      /* Mobile */
+      @media (max-width: 700px) {
+        nav {
+          width: 94%;
+        }
+
+        nav ul {
+          gap: 10px;
+          font-size: 0.8rem;
+        }
+
+        .logo {
+          font-size: 1rem;
+        }
+
+        .hero-content {
+          padding: 40px 20px;
+        }
+
+        .about {
+          grid-template-columns: 1fr;
+        }
+
+        section {
+          padding: 70px 15px;
+        }
+
+        .tab-btn {
+          padding: 10px 18px;
+          font-size: 0.85rem;
+        }
+
+        .menu-list li {
+          flex-direction: column;
+          gap: 4px;
+        }
+
+        .item-price {
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="logo">Saffron & Olive</div>
+
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#reserve">Reserve</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero" id="home">
+      <div class="hero-content glass">
+        <h1>Saffron & Olive</h1>
+
+        <h2>Mediterranean & Indian Cuisine</h2>
+
+        <p>
+          A beautiful fusion of Mediterranean freshness and authentic Indian
+          flavours, served with warmth, passion and a modern touch.
+        </p>
+
+        <a href="#menu" class="btn">Explore Our Menu</a>
+      </div>
+    </header>
+
+    <!-- Menu -->
+    <section id="menu">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Menu</h2>
+          <p>A taste of two beautiful culinary worlds.</p>
+        </div>
+
+        <div class="menu-tabs">
+          <button class="tab-btn active" data-tab="drinks">Drinks</button>
+          <button class="tab-btn" data-tab="mediterranean">
+            Mediterranean
+          </button>
+          <button class="tab-btn" data-tab="indian">Indian</button>
+        </div>
+
+        <!-- DRINKS -->
+        <div class="menu-panel active" id="drinks">
+          <div class="menu-category">
+            <h3>White Wine</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">House Wine &ndash; Italy</span>
+                  <span class="item-desc"
+                    >Light, gently fruity & easy drinking dry white</span
+                  >
+                </div>
+                <span class="item-price">Glass £6.95 / Bottle £22.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name"
+                    >Chenin Blanc &ndash; South Africa</span
+                  >
+                  <span class="item-desc"
+                    >Bright flavours of tropical fruit & apple, honeyed yet
+                    refreshing finish</span
+                  >
+                </div>
+                <span class="item-price">Glass £6.95 / Bottle £22.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name"
+                    >Sauvignon Blanc &ndash; New Zealand</span
+                  >
+                  <span class="item-desc"
+                    >Gooseberry, tropical fruits, subtle herbs. Crisp &
+                    elegant</span
+                  >
+                </div>
+                <span class="item-price">Glass £8.50 / Bottle £26.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Pinot Grigio &ndash; Italy</span>
+                  <span class="item-desc"
+                    >Clean, fresh & fruity with citrus & ripe pear
+                    flavours</span
+                  >
+                </div>
+                <span class="item-price">Glass £7.65 / Bottle £26.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chardonnay &ndash; Australia</span>
+                  <span class="item-desc"
+                    >Peach, cream & lemon blossom. Juicy palate, crisp
+                    finish</span
+                  >
+                </div>
+                <span class="item-price">Bottle £22.95</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Red Wine</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">House Wine &ndash; France</span>
+                  <span class="item-desc">Easy-drinking red with ripe fruit</span>
+                </div>
+                <span class="item-price">Glass £6.65 / Bottle £22.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Shiraz &ndash; Australia</span>
+                  <span class="item-desc"
+                    >Ripe raspberry & cherry with vanilla & spice</span
+                  >
+                </div>
+                <span class="item-price">Glass £6.95 / Bottle £22.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Merlot &ndash; Chile</span>
+                  <span class="item-desc"
+                    >Rich red, rounded with plumy fruitiness</span
+                  >
+                </div>
+                <span class="item-price">Glass £6.95 / Bottle £24.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Malbec &ndash; Argentina</span>
+                  <span class="item-desc"
+                    >Blackberry, plum & subtle oak complexity</span
+                  >
+                </div>
+                <span class="item-price">Bottle £28.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Rioja &ndash; Spain</span>
+                  <span class="item-desc"
+                    >Ripe, dark red, sweet fruitiness and savoury
+                    richness</span
+                  >
+                </div>
+                <span class="item-price">Bottle £28.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Pinot Noir &ndash; New Zealand</span>
+                  <span class="item-desc">Fairly light, softly fruity</span>
+                </div>
+                <span class="item-price">Bottle £29.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name"
+                    >Grand Faurie La Rose &ndash; Saint-&Eacute;milion Grand
+                    Cru</span
+                  >
+                  <span class="item-desc"
+                    >Elegant Bordeaux with ripe dark fruit, cedar, and silky
+                    tannins</span
+                  >
+                </div>
+                <span class="item-price">Bottle £49.95</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Ros&eacute; Wine</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name"
+                    >Gufetto Zinfandel Ros&eacute; &ndash; Italy</span
+                  >
+                  <span class="item-desc"
+                    >Off-dry, full of summer fruit flavours with a hint of
+                    sweetness</span
+                  >
+                </div>
+                <span class="item-price">Glass £6.95 / Bottle £23.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name"
+                    >Pinot Grigio Ros&eacute; Blush &ndash; Italy</span
+                  >
+                  <span class="item-desc"
+                    >Fruity and refreshing with flavours of apricot, peach and
+                    strawberries</span
+                  >
+                </div>
+                <span class="item-price">Glass £6.95 / Bottle £23.95</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Champagne</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Prosecco &ndash; Italy</span>
+                  <span class="item-desc"
+                    >Delicate, aromatic, with fresh peach & pear</span
+                  >
+                </div>
+                <span class="item-price">Bottle £28.95 / 20cl £8.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Lanson &ndash; France</span>
+                  <span class="item-desc"
+                    >Recreating the finest expression of the Lanson style with
+                    each harvest</span
+                  >
+                </div>
+                <span class="item-price">Bottle £69.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Mo&euml;t & Chandon &ndash; France</span>
+                  <span class="item-desc"
+                    >The excellence of Mo&euml;t & Chandon's Imperial Brut
+                    champagne is based on an exceptionally rich blend</span
+                  >
+                </div>
+                <span class="item-price">Bottle £79.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name"
+                    >Cuv&eacute;e Ros&eacute; Champagne &ndash;
+                    Laurent-Perrier</span
+                  >
+                  <span class="item-desc"
+                    >Elegant ros&eacute; Champagne from one of the finest
+                    houses</span
+                  >
+                </div>
+                <span class="item-price">Bottle £129.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name"
+                    >Champagne Bollinger Special Cuv&eacute;e Brut</span
+                  >
+                  <span class="item-desc"
+                    >Full-bodied Champagne with depth and complexity</span
+                  >
+                </div>
+                <span class="item-price">Bottle £119.95</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Cocktails</h3>
+
+            <h4>Signature Cocktails &ndash; £9.50</h4>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Pineapple Colada</span>
+                  <span class="item-desc"
+                    >Spiced rum. Amaretto. Pineapple. Coconut & lime
+                    gelato.</span
+                  >
+                </div>
+                <span class="item-price">£9.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Sunset Mango Margarita</span>
+                  <span class="item-desc"
+                    >Tequila. Mango. Orange. Lemon. Persian lime. Smoked
+                    paprika salt rim.</span
+                  >
+                </div>
+                <span class="item-price">£9.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Mocha Martini</span>
+                  <span class="item-desc"
+                    >Respirited Vodka. Baileys. Mr Black coffee liqueur.
+                    Cioccolata.</span
+                  >
+                </div>
+                <span class="item-price">£9.50</span>
+              </li>
+            </ul>
+
+            <h4>Spritz Cocktails &ndash; £9.50</h4>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Aperol Spritz</span>
+                  <span class="item-desc">Aperol. Prosecco. Soda.</span>
+                </div>
+                <span class="item-price">£9.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Limoncello Spritz</span>
+                  <span class="item-desc"
+                    >Respirited Vodka. Limoncello. Limonata.</span
+                  >
+                </div>
+                <span class="item-price">£9.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Elderflower Spritz</span>
+                  <span class="item-desc"
+                    >Fiorente Italian Elderflower Liqueur. Prosecco.
+                    Elderflower Tonic.</span
+                  >
+                </div>
+                <span class="item-price">£9.50</span>
+              </li>
+            </ul>
+
+            <h4>Classic &ndash; £9.50</h4>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Rum Punch</span>
+                  <span class="item-desc">Spiced Rum, Lime, Mix Juice</span>
+                </div>
+                <span class="item-price">£9.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Mojito</span>
+                  <span class="item-desc">Bacardi, Lime, Soda, Mint, Sugar</span>
+                </div>
+                <span class="item-price">£9.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Sex on the Beach</span>
+                  <span class="item-desc"
+                    >Archers, Vodka, Orange, Cranberry Juice</span
+                  >
+                </div>
+                <span class="item-price">£9.50</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Mocktails & Softs &ndash; £7.50</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Mango & Lime Cooler</span>
+                  <span class="item-desc"
+                    >Mango. Orange. Lemon. Persian lime. Soda. Smoked paprika
+                    salt rim.</span
+                  >
+                </div>
+                <span class="item-price">£7.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Non Alc. Mojito</span>
+                  <span class="item-desc">Lime, Soda, Mint, Sugar</span>
+                </div>
+                <span class="item-price">£7.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Strawberry Sparkler</span>
+                  <span class="item-desc">Strawberry. Persian lime. Soda.</span>
+                </div>
+                <span class="item-price">£7.50</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Beer & Cider</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">San Miguel (330ml)</span>
+                </div>
+                <span class="item-price">£4.25</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Moretti (330ml)</span>
+                </div>
+                <span class="item-price">£4.25</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Peroni (330ml)</span>
+                </div>
+                <span class="item-price">£4.25</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Corona (330ml)</span>
+                </div>
+                <span class="item-price">£4.25</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Cobra (600ml)</span>
+                </div>
+                <span class="item-price">£6.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Cobra (330ml)</span>
+                </div>
+                <span class="item-price">£4.25</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Alcohol-free Beer</span>
+                </div>
+                <span class="item-price">£4.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Cider</span>
+                </div>
+                <span class="item-price">£5.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Draft Beer</span>
+                </div>
+                <span class="item-price">Half £4.25 / Pint £5.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Shandy</span>
+                </div>
+                <span class="item-price">Pint £5.95 / Half £4.50</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Soft Drinks</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Coke / Diet Coke / Lemonade</span>
+                </div>
+                <span class="item-price">£4.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Tonic Water / Soda Water</span>
+                </div>
+                <span class="item-price">£4.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name"
+                    >Orange / Apple / Pineapple Juice</span
+                  >
+                </div>
+                <span class="item-price">£3.75</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name"
+                    >Water (Still/Sparkling, 375ml)</span
+                  >
+                </div>
+                <span class="item-price">£3.75</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Pint of Any Soft Drinks</span>
+                </div>
+                <span class="item-price">£5.75</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Spirits & Liqueurs</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Port & Sherry</span>
+                  <span class="item-desc"
+                    >Various Sherry (50ml), Taylors LBV (50ml)</span
+                  >
+                </div>
+                <span class="item-price">£3.75</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Vodka</span>
+                  <span class="item-desc"
+                    >Smirnoff £3.75 &middot; Grey Goose £4.75</span
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Gin</span>
+                  <span class="item-desc"
+                    >Gordon's Gin £3.75 &middot; Tanqueray Gin £3.75 &middot;
+                    Hendrick's £4.75 &middot; Bombay Sapphire £4.75</span
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Rum</span>
+                  <span class="item-desc"
+                    >Bacardi White Rum £3.75 &middot; Captain Morgan £3.75
+                    &middot; Malibu Coconut £3.75 &middot; Captain Morgan
+                    Spiced £4.50</span
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Brandy / Whisky</span>
+                  <span class="item-desc"
+                    >Cognac £6.75 &middot; Courvoisier VS £4.75 &middot; Hine
+                    Rare VSOP £4.75 &middot; Bells, Jameson £3.75 &middot;
+                    Jack Daniels £4.75 &middot; Glenfiddich Single Malt
+                    £4.75</span
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Liqueurs & Aperitifs</span>
+                  <span class="item-desc"
+                    >Southern Comfort, Disaronno Amaretto, Campari,
+                    Limoncello, Pimms (50ml), Baileys (50ml), Tia Maria,
+                    Martini Dry/Sweet/Rosso, Tequila, Sambuca</span
+                  >
+                </div>
+                <span class="item-price">£3.75 each</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Liqueurs (Premium)</span>
+                  <span class="item-desc"
+                    >Benedictine, Grand Marnier, Drambuie, Cointreau</span
+                  >
+                </div>
+                <span class="item-price">£4.75 each</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Mixers</span>
+                </div>
+                <span class="item-price">£1.20</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Hot Drinks & Ice Coffee</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Tea</span>
+                </div>
+                <span class="item-price">£2.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Herbal Tea</span>
+                </div>
+                <span class="item-price">£2.80</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Espresso</span>
+                </div>
+                <span class="item-price">Single £2.50 / Double £2.80</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Cappuccino</span>
+                </div>
+                <span class="item-price">£2.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Americano</span>
+                </div>
+                <span class="item-price">Black/White £2.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Latte</span>
+                </div>
+                <span class="item-price">£2.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Baileys Coffee</span>
+                </div>
+                <span class="item-price">£7.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Irish Coffee with Jameson</span>
+                </div>
+                <span class="item-price">£7.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Calypso Coffee (Tia Maria)</span>
+                </div>
+                <span class="item-price">£7.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Ice Latte</span>
+                </div>
+                <span class="item-price">£4.25</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Ice Americano</span>
+                </div>
+                <span class="item-price">£3.95</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MEDITERRANEAN -->
+        <div class="menu-panel" id="mediterranean">
+          <p class="menu-legend">
+            V Vegetarian &middot; D Dairy &middot; G Gluten &middot; C
+            Crustacean &middot; F Fish &middot; E Egg &middot; Su Sulphites
+            &middot; N Nuts &middot; M Molluscs &middot; Ce Celery
+          </p>
+
+          <div class="menu-category">
+            <h3>Starters</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Soup of the Day</span>
+                  <span class="item-desc">Please ask staff for details</span>
+                </div>
+                <span class="item-price">£5.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Meze (V)</span>
+                  <span class="item-desc"
+                    >Houmous, Tzatziki, Olives, Warm pitta</span
+                  >
+                </div>
+                <span class="item-price">£7.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Buffalo Mozzarella (D)</span>
+                  <span class="item-desc">Tomato, Basil and Rocket</span>
+                </div>
+                <span class="item-price">£7.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Gyoza (V)(G)</span>
+                  <span class="item-desc"
+                    >Vegetable/Chicken gyoza &ndash; Steam/Fried</span
+                  >
+                </div>
+                <span class="item-price">£7.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Lamb Meatballs (G)</span>
+                  <span class="item-desc"
+                    >Tomato, chilli, basil, herbs, crostini</span
+                  >
+                </div>
+                <span class="item-price">£8.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Baby Squid (C)(D)(G/F)</span>
+                  <span class="item-desc">With tartar sauce</span>
+                </div>
+                <span class="item-price">£8.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Crispy Cod Goujons (G)(F)(E)</span>
+                  <span class="item-desc">Served with homemade sauce</span>
+                </div>
+                <span class="item-price">£8.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Pan Fried Prawns (G)(D)(C)</span>
+                  <span class="item-desc"
+                    >Garlic, chilli, butter with warm pitta, mix leaves</span
+                  >
+                </div>
+                <span class="item-price">£9.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Sea Scallops (F)(G)(D)</span>
+                  <span class="item-desc"
+                    >Gin marinated, baby green tomato salsa & rocket</span
+                  >
+                </div>
+                <span class="item-price">£12.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Nachos (D)(G)</span>
+                  <span class="item-desc"
+                    >Crispy tortilla, jalape&ntilde;os, tomato salsa,
+                    guacamole, sour cream, cheddar cheese</span
+                  >
+                </div>
+                <span class="item-price">£9.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Crispy Duck Salad (G)(Su)</span>
+                  <span class="item-desc"
+                    >Spinach, Hoisin, chilli, broccoli</span
+                  >
+                </div>
+                <span class="item-price">£9.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Grilled Halloumi (V)(D)(G)(Su)</span>
+                  <span class="item-desc"
+                    >Olives, tomato, houmous, warm pitta, extra virgin olive
+                    oil</span
+                  >
+                </div>
+                <span class="item-price">£9.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chicken Wings</span>
+                  <span class="item-desc"
+                    >With red hot sauce / sweet chilli sauce</span
+                  >
+                </div>
+                <span class="item-price">£7.95</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Mixed Platter</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name"
+                    >Mixed Platter (4 People) (G)(F)</span
+                  >
+                  <span class="item-desc"
+                    >Salami Napoli, Salami Milano, Samosa, grilled prawn,
+                    grilled halloumi, meat balls, meze and warm pitta
+                    bread</span
+                  >
+                </div>
+                <span class="item-price">£36.95</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Pasta & Risotto</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name"
+                    >Spaghetti Bolognaise (D)(G)(C)(E)(Su)</span
+                  >
+                  <span class="item-desc"
+                    >Spaghetti with classic bolognaise sauce</span
+                  >
+                </div>
+                <span class="item-price">£8.95 / £14.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name"
+                    >Roasted Aubergine Spaghetti (V)(D)(G)(Su)</span
+                  >
+                  <span class="item-desc"
+                    >Tomato, basil, parmesan with spaghetti</span
+                  >
+                </div>
+                <span class="item-price">£9.95 / £15.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name"
+                    >Tagliatelle Carbonara (D)(G)(E)(Su)</span
+                  >
+                  <span class="item-desc"
+                    >Pancetta, shallots, Parma, egg yolk, cream sauce</span
+                  >
+                </div>
+                <span class="item-price">£10.95 / £16.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name"
+                    >Tagliatelle Chicken Pesto (D)(G)(E)(Su)(N)</span
+                  >
+                  <span class="item-desc"
+                    >Red pepper, aubergine, basil pesto, cherry tomato,
+                    shallots, crispy chicken and parmesan</span
+                  >
+                </div>
+                <span class="item-price">£18.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name"
+                    >Seafood Linguini (Ce)(G)(C)(E)(M)(F)(Su)</span
+                  >
+                  <span class="item-desc"
+                    >Mixed seafood, cherry tomatoes, white wine, chilli,
+                    garlic</span
+                  >
+                </div>
+                <span class="item-price">£18.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name"
+                    >Non-Gluten Pasta Vegan Pomodoro</span
+                  >
+                  <span class="item-desc"
+                    >Dotterini tomatoes, Pomodoro sauce</span
+                  >
+                </div>
+                <span class="item-price">£15.95</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Burgers</h3>
+            <p class="category-note">
+              100% dry aged beef ground on site daily. Served with triple
+              cooked homemade chips and coleslaw.
+            </p>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Classic Burger (G)(D)</span>
+                  <span class="item-desc"
+                    >Cos lettuce, heritage tomato, red onion, and burger
+                    sauce</span
+                  >
+                </div>
+                <span class="item-price">£12.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Cheese Burger (G)(D)</span>
+                  <span class="item-desc"
+                    >Cheddar cheese, cos lettuce, heritage tomato, red onion,
+                    and burger sauce</span
+                  >
+                </div>
+                <span class="item-price">£13.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Old Smokey Burger (G)(D)</span>
+                  <span class="item-desc"
+                    >Smoked cheese, cos lettuce, heritage tomato, red onion,
+                    and burger sauce</span
+                  >
+                </div>
+                <span class="item-price">£14.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name"
+                    >Portobello Mushroom Burger (V)(G)(D)</span
+                  >
+                  <span class="item-desc"
+                    >Cheddar cheese, cos lettuce, heritage tomato, red onion,
+                    burger sauce; halloumi and egg</span
+                  >
+                </div>
+                <span class="item-price">£16.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chicken Burger (G)(D)</span>
+                  <span class="item-desc"
+                    >Grilled chicken, cos lettuce, heritage tomato, red onion,
+                    and burger sauce</span
+                  >
+                </div>
+                <span class="item-price">£13.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name"
+                    >Halloumi and Grilled Vegetables Burger (V)(G)(D)</span
+                  >
+                  <span class="item-desc"
+                    >Cheddar cheese, cos lettuce, heritage tomato, red onion,
+                    and burger sauce</span
+                  >
+                </div>
+                <span class="item-price">£14.95</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>The Grill</h3>
+            <p class="category-note">Dry-aged for a minimum of 28 days.</p>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Sirloin (250gm)</span>
+                  <span class="item-desc">Grilled vegetables</span>
+                </div>
+                <span class="item-price">£25.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Rib-Eye (250gm)</span>
+                  <span class="item-desc"
+                    >Portobello mushroom, sun-blushed tomato, rocket</span
+                  >
+                </div>
+                <span class="item-price">£26.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">T-Bone (600gm)</span>
+                  <span class="item-desc"
+                    >Portobello mushroom, grilled asparagus</span
+                  >
+                </div>
+                <span class="item-price">£34.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Fillet (250gm)</span>
+                  <span class="item-desc"
+                    >Portobello mushroom, grilled asparagus</span
+                  >
+                </div>
+                <span class="item-price">£32.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Medallion of Beef</span>
+                  <span class="item-desc">With mushroom and creamy mash</span>
+                </div>
+                <span class="item-price">£31.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Steak Salad</span>
+                  <span class="item-desc"
+                    >Grilled sirloin, mixed leaves and honey mustard
+                    dressing</span
+                  >
+                </div>
+                <span class="item-price">£26.95</span>
+              </li>
+            </ul>
+            <p class="category-note">
+              Choose a sauce: Peppercorn / Wild mushroom / BBQ
+            </p>
+          </div>
+
+          <div class="menu-category">
+            <h3>Chicken & Fish</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chicken Steak (D)</span>
+                  <span class="item-desc"
+                    >With chips/steamed vegetables/mashed potatoes</span
+                  >
+                </div>
+                <span class="item-price">£18.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chicken Caesar Salad (G)(D)</span>
+                  <span class="item-desc"
+                    >Cos lettuce, croutons with parmesan</span
+                  >
+                </div>
+                <span class="item-price">£16.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Grilled Sea Bass</span>
+                  <span class="item-desc"
+                    >Crushed new potato, tomato salsa, rocket</span
+                  >
+                </div>
+                <span class="item-price">£17.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Grilled Swordfish</span>
+                  <span class="item-desc"
+                    >With fresh mango salsa and mango chutney</span
+                  >
+                </div>
+                <span class="item-price">£20.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Pan Fried Salmon</span>
+                  <span class="item-desc"
+                    >Mashed potatoes, roasted vegetables and cream sauce</span
+                  >
+                </div>
+                <span class="item-price">£20.95</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Sides</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Triple Cooked Chips</span>
+                </div>
+                <span class="item-price">£3.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Coleslaw</span>
+                </div>
+                <span class="item-price">£2.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Garden Salad</span>
+                </div>
+                <span class="item-price">£4.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Green Beans</span>
+                </div>
+                <span class="item-price">£3.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Grilled Vegetables</span>
+                </div>
+                <span class="item-price">£5.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Mash Potato</span>
+                </div>
+                <span class="item-price">£3.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Patatas Bravas</span>
+                  <span class="item-desc"
+                    >Roasted potato, peppers, cherry tomato</span
+                  >
+                </div>
+                <span class="item-price">£4.95</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Desserts</h3>
+            <p class="category-note">All desserts served with ice cream.</p>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Vanilla Cheesecake</span>
+                  <span class="item-desc">Pastry Cream with Lemon</span>
+                </div>
+                <span class="item-price">£6.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chocolate Mousse</span>
+                </div>
+                <span class="item-price">£6.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Ice Cream</span>
+                  <span class="item-desc">Vanilla or Strawberry</span>
+                </div>
+                <span class="item-price">£4.00</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Menu Offers</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Dinner with Us (Mon &ndash; Thu)</span>
+                </div>
+                <span class="item-price">2 Course £22.95 / 3 Course £25.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Sunday Roast</span>
+                </div>
+                <span class="item-price">2 Course £21.95 / 3 Course £24.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Steak Special</span>
+                </div>
+                <span class="item-price">40% off on Tuesday</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- INDIAN -->
+        <div class="menu-panel" id="indian">
+          <p class="menu-legend">
+            V Vegetarian &middot; D Dairy &middot; G Gluten &middot; C
+            Crustacean &middot; F Fish &middot; E Egg &middot; Su Sulphites
+            &middot; N Nuts &middot; M Molluscs &middot; Ce Celery
+          </p>
+
+          <div class="menu-category">
+            <h3>Indian Starters</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Salmon Tikka</span>
+                  <span class="item-desc"
+                    >Salmon fillet marinated with homemade tandoori
+                    sauce</span
+                  >
+                </div>
+                <span class="item-price">£7.75</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Halloumi Wrap (V)</span>
+                  <span class="item-desc"
+                    >Grilled halloumi cheese wrapped in a soft chapati</span
+                  >
+                </div>
+                <span class="item-price">£6.45</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chicken Chaat Puree</span>
+                  <span class="item-desc">Chicken, spiced and served on a puree</span>
+                </div>
+                <span class="item-price">£7.45</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Garlic Chicken Wings</span>
+                  <span class="item-desc"
+                    >Chicken wings mixed with herbs & spices, cooked in
+                    charcoal oven</span
+                  >
+                </div>
+                <span class="item-price">£6.25</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Mysore Chilli Chicken/Lamb</span>
+                  <span class="item-desc"
+                    >Light spiced chicken, cooked chillies, peppers &
+                    yoghurt</span
+                  >
+                </div>
+                <span class="item-price">£6.25</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chicken/Lamb Shashlik</span>
+                  <span class="item-desc"
+                    >Marinated chicken or lamb cooked in charcoal oven</span
+                  >
+                </div>
+                <span class="item-price">£6.25</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Sheek Kebab</span>
+                  <span class="item-desc">Spicy mince lamb</span>
+                </div>
+                <span class="item-price">£6.00</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Samosas</span>
+                  <span class="item-desc"
+                    >Savoury filo pastry with homemade vegetables or minced
+                    lamb</span
+                  >
+                </div>
+                <span class="item-price">£5.45</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Paneer Tikka</span>
+                  <span class="item-desc"
+                    >Marinated paneer cooked in tandoori oven</span
+                  >
+                </div>
+                <span class="item-price">£5.45</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Mixed Platter (for Two)</span>
+                  <span class="item-desc"
+                    >Meat samosa, sheek kebab, lamb tikka, chicken tikka &
+                    chicken wings</span
+                  >
+                </div>
+                <span class="item-price">£14.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name"
+                    >Vegetarian Platter (for Two) (V)</span
+                  >
+                  <span class="item-desc"
+                    >Vegetable samosas, mixed pakoras, onion bhaji and
+                    paneer</span
+                  >
+                </div>
+                <span class="item-price">£11.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chicken/Lamb Tikka</span>
+                  <span class="item-desc"
+                    >Marinated chicken or lamb cooked in a charcoal oven</span
+                  >
+                </div>
+                <span class="item-price">£5.00</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Tandoori Chicken</span>
+                  <span class="item-desc"
+                    >Marinated in the bone chicken cooked in a charcoal
+                    oven</span
+                  >
+                </div>
+                <span class="item-price">£6.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Prawn Puree</span>
+                  <span class="item-desc"
+                    >Prawns cooked with spices & herbs served over puree
+                    bread</span
+                  >
+                </div>
+                <span class="item-price">£5.75</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Indian Classic Dishes</h3>
+            <p class="category-note">
+              Available in a choice of chicken/lamb, tikka, prawns, king
+              prawns, or vegetables. Prices vary.
+            </p>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chicken Tikka Masala</span>
+                  <span class="item-desc"
+                    >Barbecued chicken or lamb cubes cooked with masala
+                    sauce</span
+                  >
+                </div>
+                <span class="item-price">£9.95 / £11.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chicken/Lamb Badam Pasanda</span>
+                  <span class="item-desc"
+                    >Cooked in a creamy sauce & ground cashew nut</span
+                  >
+                </div>
+                <span class="item-price">£9.95 / £11.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Butter Chicken</span>
+                  <span class="item-desc"
+                    >Barbecued chicken cubes cooked with almonds & ghee in a
+                    mild sauce</span
+                  >
+                </div>
+                <span class="item-price">£9.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Korma</span>
+                  <span class="item-desc"
+                    >Cooked with homemade lightly seasoned sauce</span
+                  >
+                </div>
+                <span class="item-price">£9.95 / £11.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Balti</span>
+                  <span class="item-desc"
+                    >Cooked with Balti spices in a rich spicy sauce</span
+                  >
+                </div>
+                <span class="item-price">£9.95 / £11.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Korai</span>
+                  <span class="item-desc"
+                    >Cooked with paprika, green peppers & onion in a medium
+                    spicy sauce</span
+                  >
+                </div>
+                <span class="item-price">£9.95 / £11.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Sathkora</span>
+                  <span class="item-desc"
+                    >Cooked with pickles & citrus fruit in a medium spicy
+                    sauce</span
+                  >
+                </div>
+                <span class="item-price">£9.95 / £11.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Jalfrezi</span>
+                  <span class="item-desc"
+                    >Cooked with garlic, green chilies, green peppers &
+                    coriander</span
+                  >
+                </div>
+                <span class="item-price">£9.95 / £11.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Madras</span>
+                  <span class="item-desc"
+                    >Cooked with chili powder in a hot sauce</span
+                  >
+                </div>
+                <span class="item-price">£9.95 / £11.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Vindaloo</span>
+                  <span class="item-desc"
+                    >Cooked with chili powder & potato in a very hot & spicy
+                    sauce</span
+                  >
+                </div>
+                <span class="item-price">£9.95 / £11.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Sag</span>
+                  <span class="item-desc"
+                    >Cooked with fresh garlic, spinach & green peppers in a
+                    medium spicy sauce</span
+                  >
+                </div>
+                <span class="item-price">£9.95 / £11.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Dupiaza</span>
+                  <span class="item-desc"
+                    >Cooked with brown onion & garam masala in a medium spicy
+                    sauce</span
+                  >
+                </div>
+                <span class="item-price">£9.95 / £11.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Dansak</span>
+                  <span class="item-desc"
+                    >Cooked with lentils in a hot, sweet and sour sauce</span
+                  >
+                </div>
+                <span class="item-price">£9.95 / £11.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Pathia</span>
+                  <span class="item-desc"
+                    >Cooked with hot, sweet and sour sauce</span
+                  >
+                </div>
+                <span class="item-price">£9.95 / £11.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Rogon</span>
+                  <span class="item-desc"
+                    >Cooked with garlic, cherry tomatoes & coriander in a
+                    medium sauce</span
+                  >
+                </div>
+                <span class="item-price">£9.95 / £11.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Bhuna</span>
+                  <span class="item-desc"
+                    >Cooked with mixed powder & coriander, for a rich spicy
+                    taste</span
+                  >
+                </div>
+                <span class="item-price">£9.95 / £11.95</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Saffron & Olive Specialisation</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Gost-A-Laziz</span>
+                  <span class="item-desc"
+                    >Tender lamb cooked with fresh ginger, green pepper &
+                    coriander in medium hot sauce</span
+                  >
+                </div>
+                <span class="item-price">£11.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chicken Tikka Rezella</span>
+                  <span class="item-desc"
+                    >Barbecued chicken cooked with yoghurt, ginger & coriander
+                    in a madras hot sauce</span
+                  >
+                </div>
+                <span class="item-price">£10.25</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chicken or Lamb Tikka Naga</span>
+                  <span class="item-desc"
+                    >Fresh Bengali bullet chillis, roasted cumin seeds, fairly
+                    hot</span
+                  >
+                </div>
+                <span class="item-price">£11.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Marugh Mosolla</span>
+                  <span class="item-desc"
+                    >Off the bone tandoori chicken & spices, mincemeat along
+                    with boiled eggs. Medium sauce</span
+                  >
+                </div>
+                <span class="item-price">£10.25</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">King Prawn Makni</span>
+                  <span class="item-desc"
+                    >Grilled jumbo king prawns cooked with almonds, coconut
+                    milk and paneer cheese in a mild sauce</span
+                  >
+                </div>
+                <span class="item-price">£14.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">King Prawn Rezella</span>
+                  <span class="item-desc"
+                    >Grilled king prawns cooked with yoghurt, ginger &
+                    coriander in a madras hot sauce</span
+                  >
+                </div>
+                <span class="item-price">£14.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Garlic Chilli Fry</span>
+                  <span class="item-desc"
+                    >Grilled chicken or lamb cooked with fresh garlic, bullet
+                    chillis & garnished with coriander</span
+                  >
+                </div>
+                <span class="item-price">£11.25</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chicken Nantara</span>
+                  <span class="item-desc"
+                    >Barbecued chicken cooked with Goan herbs & spices in a
+                    slightly hot sauce</span
+                  >
+                </div>
+                <span class="item-price">£9.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Sylheti Special</span>
+                  <span class="item-desc"
+                    >Chicken or Lamb cooked with chef's own prepared recipes
+                    with medium spices</span
+                  >
+                </div>
+                <span class="item-price">£11.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">House Special</span>
+                  <span class="item-desc"
+                    >Chicken or Lamb marinated medium spice with specialty
+                    prepared sauce</span
+                  >
+                </div>
+                <span class="item-price">£11.95</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Indian Tandoori Dishes</h3>
+            <p class="category-note">Served with salad & mint sauce.</p>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chicken/Lamb Tikka</span>
+                  <span class="item-desc"
+                    >Marinated chicken or lamb cooked in charcoal oven</span
+                  >
+                </div>
+                <span class="item-price">£10.00 / £11.75</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Birbali Lamb Chops</span>
+                  <span class="item-desc"
+                    >Lamb chops marinated with herbs and spices</span
+                  >
+                </div>
+                <span class="item-price">£14.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Tandoori Mixed Grill</span>
+                  <span class="item-desc"
+                    >Chicken tikka, lamb tikka, sheek kebab, king prawn &
+                    tandoori chicken</span
+                  >
+                </div>
+                <span class="item-price">£15.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Tandoori King Prawn</span>
+                  <span class="item-desc"
+                    >Jumbo king prawns marinated with herbs & spices</span
+                  >
+                </div>
+                <span class="item-price">£14.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Tandoori Chicken</span>
+                  <span class="item-desc"
+                    >Marinated on the bone chicken cooked in charcoal
+                    oven</span
+                  >
+                </div>
+                <span class="item-price">£10.75</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chicken/Lamb Shashlik</span>
+                  <span class="item-desc"
+                    >Cooked with green peppers, onions & tomatoes</span
+                  >
+                </div>
+                <span class="item-price">£10.00 / £11.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Paneer Tikka</span>
+                  <span class="item-desc"
+                    >Marinated paneer cooked in charcoal oven</span
+                  >
+                </div>
+                <span class="item-price">£10.25</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Biryani Dishes</h3>
+            <p class="category-note">
+              Served with rice and chef's homemade vegetable curry.
+            </p>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chicken / Lamb Biryani</span>
+                </div>
+                <span class="item-price">£10.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Vegetable Biryani</span>
+                </div>
+                <span class="item-price">£9.50</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chicken Tikka Biryani</span>
+                </div>
+                <span class="item-price">£11.00</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Tiger Prawn Biryani</span>
+                </div>
+                <span class="item-price">£11.00</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Tandoori King Prawn Biryani</span>
+                </div>
+                <span class="item-price">£14.95</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Indian Vegetable Dishes</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Vegetable Curry / Madras</span>
+                </div>
+                <span class="item-price">£5.75</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Bombay Aloo</span>
+                </div>
+                <span class="item-price">£5.25</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Cauliflower Bhaji</span>
+                </div>
+                <span class="item-price">£5.25</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Onion Bhaji</span>
+                </div>
+                <span class="item-price">£5.25</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Tarka Daal</span>
+                  <span class="item-desc">Lentils with saut&eacute;ed garlic</span>
+                </div>
+                <span class="item-price">£5.25</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Mushroom Bhaji</span>
+                </div>
+                <span class="item-price">£5.25</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Saag Bhaji</span>
+                  <span class="item-desc">Spinach</span>
+                </div>
+                <span class="item-price">£5.45</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Sag Paneer</span>
+                  <span class="item-desc">Spinach & Cheese</span>
+                </div>
+                <span class="item-price">£5.75</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Saag Aloo</span>
+                  <span class="item-desc">Spinach & Potatoes</span>
+                </div>
+                <span class="item-price">£5.75</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Aloo Gobi</span>
+                  <span class="item-desc">Potato & Cauliflower</span>
+                </div>
+                <span class="item-price">£5.45</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Brinjol Bhaji</span>
+                  <span class="item-desc">Spiced Aubergine</span>
+                </div>
+                <span class="item-price">£4.75</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Bindi Bhaji</span>
+                  <span class="item-desc">Spicy Okra</span>
+                </div>
+                <span class="item-price">£5.45</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chana Masala</span>
+                  <span class="item-desc">Spicy Chickpeas</span>
+                </div>
+                <span class="item-price">£5.25</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chana Aloo</span>
+                  <span class="item-desc">Chickpeas & Potatoes</span>
+                </div>
+                <span class="item-price">£4.25</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Rice Dishes</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Jasmine Rice</span>
+                  <span class="item-desc">Long Grain Basmati</span>
+                </div>
+                <span class="item-price">£3.75</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Pilau Rice</span>
+                  <span class="item-desc">Fragrant Basmati</span>
+                </div>
+                <span class="item-price">£4.75</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Special Fried Rice</span>
+                  <span class="item-desc">Basmati fried with egg & peas</span>
+                </div>
+                <span class="item-price">£5.45</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Mushroom Rice</span>
+                </div>
+                <span class="item-price">£5.00</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Lime & Coriander Rice</span>
+                </div>
+                <span class="item-price">£5.00</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Keema Rice</span>
+                  <span class="item-desc">Minced Lamb Rice</span>
+                </div>
+                <span class="item-price">£5.45</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Coconut Rice</span>
+                </div>
+                <span class="item-price">£5.45</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Vegetable Fried Rice</span>
+                </div>
+                <span class="item-price">£5.00</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category">
+            <h3>Breads & Sides</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Plain Naan</span>
+                </div>
+                <span class="item-price">£4.00</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Peshwari Naan</span>
+                </div>
+                <span class="item-price">£4.75</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Keema Naan</span>
+                </div>
+                <span class="item-price">£4.75</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Garlic Naan</span>
+                </div>
+                <span class="item-price">£4.75</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chilli Cheese Naan</span>
+                </div>
+                <span class="item-price">£5.00</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Vegetable Naan</span>
+                </div>
+                <span class="item-price">£4.75</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Paratha</span>
+                </div>
+                <span class="item-price">£4.45</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Stuffed Paratha</span>
+                </div>
+                <span class="item-price">£4.75</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Tandoori Roti</span>
+                </div>
+                <span class="item-price">£4.00</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Chapati</span>
+                </div>
+                <span class="item-price">£3.00</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Puree</span>
+                </div>
+                <span class="item-price">£3.00</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Plain / Spicy Papadum</span>
+                </div>
+                <span class="item-price">£0.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name"
+                    >Mango Chutney / Mixed Pickle / Onion Salad</span
+                  >
+                </div>
+                <span class="item-price">£0.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name">Mint Sauce / Tamarind Sauce</span>
+                </div>
+                <span class="item-price">£0.95</span>
+              </li>
+              <li>
+                <div class="item-info">
+                  <span class="item-name"
+                    >Cucumber / Onion Raita / Plain Raita</span
+                  >
+                </div>
+                <span class="item-price">£2.00</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container about">
+        <div class="about-card glass">
+          <h2>Our Story</h2>
+
+          <p>
+            At Saffron & Olive, we bring together the vibrant spices of India
+            with the fresh, colourful flavours of the Mediterranean.
+            <br /><br />
+            Our kitchen celebrates bold flavours, fresh ingredients and the joy
+            of sharing food.
+          </p>
+        </div>
+
+        <div class="about-card glass">
+          <h2>Fresh. Bold. Beautiful.</h2>
+
+          <p>
+            From fragrant saffron and cardamom to fresh herbs, olives and
+            roasted vegetables, every plate is created to give you something
+            memorable.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservation -->
+    <section id="reserve">
+      <div class="container">
+        <div class="section-title">
+          <h2>Reserve a Table</h2>
+          <p>Join us for an unforgettable dining experience.</p>
+        </div>
+
+        <div class="reservation glass">
+          <form id="reservationForm">
+            <input type="text" id="name" placeholder="Your Name" required />
+
+            <input
+              type="email"
+              id="email"
+              placeholder="Email Address"
+              required
+            />
+
+            <input type="date" id="date" required />
+
+            <select id="guests" required>
+              <option value="">Number of Guests</option>
+              <option>1 Guest</option>
+              <option>2 Guests</option>
+              <option>3 Guests</option>
+              <option>4 Guests</option>
+              <option>5+ Guests</option>
+            </select>
+
+            <button class="btn" type="submit">Request Reservation</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 <strong>Saffron & Olive</strong></p>
+
+      <p>Mediterranean & Indian Cuisine</p>
+
+      <p>135-137 Station Rd, Sidcup DA15 7AA</p>
 
       <p>
-        A beautiful fusion of Mediterranean freshness and
-        authentic Indian flavours, served with warmth,
-        passion and a modern touch.
+        <a
+          href="tel:+442037456171"
+          style="color: #f4c95d; text-decoration: none"
+          >020 3745 6171</a
+        >
       </p>
+    </footer>
 
-      <a href="#menu" class="btn">Explore Our Menu</a>
+    <!-- JavaScript -->
+    <script>
+      // Reservation form
+      document
+        .getElementById("reservationForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
 
-    </div>
-  </header>
+          const name = document.getElementById("name").value;
 
+          alert(
+            "Thank you, " +
+              name +
+              "! Your reservation request has been received.",
+          );
 
-  <!-- Menu -->
-  <section id="menu">
-    <div class="container">
+          this.reset();
+        });
 
-      <div class="section-title">
-        <h2>Our Menu</h2>
-        <p>A taste of two beautiful culinary worlds.</p>
-      </div>
+      // Menu tabs
+      document.querySelectorAll(".tab-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          document
+            .querySelectorAll(".tab-btn")
+            .forEach(function (b) {
+              b.classList.remove("active");
+            });
+          document
+            .querySelectorAll(".menu-panel")
+            .forEach(function (p) {
+              p.classList.remove("active");
+            });
 
-      <div class="menu-grid">
-
-        <div class="menu-card glass">
-          <span>🍛</span>
-          <h3>Butter Chicken</h3>
-          <p>
-            Tender chicken cooked in a rich,
-            creamy tomato and spice sauce.
-          </p>
-          <div class="price">£14.95</div>
-        </div>
-
-        <div class="menu-card glass">
-          <span>🥙</span>
-          <h3>Falafel Mezze</h3>
-          <p>
-            Crispy falafel served with hummus,
-            olives, salad and warm flatbread.
-          </p>
-          <div class="price">£11.95</div>
-        </div>
-
-        <div class="menu-card glass">
-          <span>🍢</span>
-          <h3>Tandoori Chicken</h3>
-          <p>
-            Marinated chicken roasted with
-            traditional tandoori spices.
-          </p>
-          <div class="price">£13.95</div>
-        </div>
-
-        <div class="menu-card glass">
-          <span>🫒</span>
-          <h3>Mediterranean Platter</h3>
-          <p>
-            Hummus, olives, grilled vegetables,
-            feta and artisan flatbread.
-          </p>
-          <div class="price">£15.95</div>
-        </div>
-
-        <div class="menu-card glass">
-          <span>🍚</span>
-          <h3>Saffron Biryani</h3>
-          <p>
-            Fragrant basmati rice, saffron,
-            herbs and aromatic Indian spices.
-          </p>
-          <div class="price">£13.95</div>
-        </div>
-
-        <div class="menu-card glass">
-          <span>🍮</span>
-          <h3>Rose & Pistachio Dessert</h3>
-          <p>
-            A delicate dessert combining
-            rose, pistachio and creamy textures.
-          </p>
-          <div class="price">£7.50</div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- About -->
-  <section id="about">
-
-    <div class="container about">
-
-      <div class="about-card glass">
-        <h2>Our Story</h2>
-
-        <p>
-          At Saffron & Olive Meditaria, we bring together
-          the vibrant spices of India with the fresh,
-          colourful flavours of the Mediterranean.
-          <br><br>
-          Our kitchen celebrates bold flavours,
-          fresh ingredients and the joy of sharing food.
-        </p>
-      </div>
-
-      <div class="about-card glass">
-        <h2>Fresh. Bold. Beautiful.</h2>
-
-        <p>
-          From fragrant saffron and cardamom to fresh
-          herbs, olives and roasted vegetables, every
-          plate is created to give you something memorable.
-        </p>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- Reservation -->
-  <section id="reserve">
-
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Reserve a Table</h2>
-        <p>Join us for an unforgettable dining experience.</p>
-      </div>
-
-      <div class="reservation glass">
-
-        <form id="reservationForm">
-
-          <input
-            type="text"
-            id="name"
-            placeholder="Your Name"
-            required
-          >
-
-          <input
-            type="email"
-            id="email"
-            placeholder="Email Address"
-            required
-          >
-
-          <input
-            type="date"
-            id="date"
-            required
-          >
-
-          <select id="guests" required>
-            <option value="">Number of Guests</option>
-            <option>1 Guest</option>
-            <option>2 Guests</option>
-            <option>3 Guests</option>
-            <option>4 Guests</option>
-            <option>5+ Guests</option>
-          </select>
-
-          <button class="btn" type="submit">
-            Request Reservation
-          </button>
-
-        </form>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- Footer -->
-  <footer>
-    <p>
-      © 2026 <strong>Saffron & Olive Meditaria</strong>
-    </p>
-
-    <p>
-      Mediterranean & Indian Cuisine
-    </p>
-
-    <p>
-      135-137 Station Rd, Sidcup DA15 7AA
-    </p>
-
-    <p>
-      <a href="tel:+442037456171" style="color:#f4c95d; text-decoration:none;">020 3745 6171</a>
-    </p>
-  </footer>
-
-
-  <!-- JavaScript -->
-  <script>
-
-    // Reservation form
-    document
-      .getElementById("reservationForm")
-      .addEventListener("submit", function(event) {
-
-        event.preventDefault();
-
-        const name =
-          document.getElementById("name").value;
-
-        alert(
-          "Thank you, " + name +
-          "! Your reservation request has been received."
-        );
-
-        this.reset();
+          btn.classList.add("active");
+          document.getElementById(btn.dataset.tab).classList.add("active");
+        });
       });
 
+      // Change navigation background when scrolling
+      window.addEventListener("scroll", function () {
+        const nav = document.querySelector("nav");
 
-    // Change navigation background when scrolling
-    window.addEventListener("scroll", function() {
-
-      const nav = document.querySelector("nav");
-
-      if (window.scrollY > 50) {
-        nav.style.background =
-          "rgba(10, 20, 18, 0.75)";
-      } else {
-        nav.style.background =
-          "rgba(255, 255, 255, 0.12)";
-      }
-
-    });
-
-  </script>
-
-</body>
+        if (window.scrollY > 50) {
+          nav.style.background = "rgba(10, 20, 18, 0.75)";
+        } else {
+          nav.style.background = "rgba(255, 255, 255, 0.12)";
+        }
+      });
+    </script>
+  </body>
 </html>
