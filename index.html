@@ -317,26 +317,6 @@
         flex-shrink: 0;
       }
 
-      .cart-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 8px 16px;
-        border-radius: 20px;
-        background: rgba(244, 201, 93, 0.15);
-        border: 1px solid #f4c95d;
-        color: #f4c95d;
-        text-decoration: none;
-        font-size: 0.85rem;
-        font-weight: bold;
-        transition: 0.3s;
-      }
-
-      .cart-btn:hover {
-        background: #f4c95d;
-        color: #17231f;
-      }
-
       /* Footer */
       footer {
         text-align: center;
@@ -347,6 +327,39 @@
 
       footer strong {
         color: #f4c95d;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin: 0 0 24px;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(244, 201, 93, 0.12);
+        border: 1px solid #f4c95d;
+        color: #f4c95d;
+        transition: 0.3s;
+      }
+
+      .social-links a:hover {
+        background: #f4c95d;
+        color: #17231f;
+        transform: translateY(-3px);
+      }
+
+      .social-links svg {
+        width: 20px;
+        height: 20px;
+        fill: currentColor;
       }
 
       /* Mobile */
@@ -410,8 +423,8 @@
         </ul>
 
         <div class="nav-actions">
-          <a href="#" class="nav-btn">Order Now</a>
-          <a href="#" class="nav-btn nav-btn-outline">Reserve</a>
+          <a href="https://order.rpos.uk/so" class="nav-btn" target="_blank" rel="noopener">Order Now</a>
+          <a href="https://book.rpos.uk/so" class="nav-btn nav-btn-outline" target="_blank" rel="noopener">Reserve</a>
         </div>
       </div>
     </nav>
@@ -428,7 +441,7 @@
           flavours, served with warmth, passion and a modern touch.
         </p>
 
-        <a href="#menu" class="btn">Explore Our Menu</a>
+        <a href="https://order.rpos.uk/so" class="btn" target="_blank" rel="noopener">Explore Our Menu</a>
       </div>
     </header>
 
@@ -461,7 +474,6 @@
 <div class="price">Glass £6.95 / Bottle £22.95</div>
 </div>
 <p>Light, gently fruity & easy drinking dry white</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍷</span>
@@ -471,7 +483,6 @@
 </div>
 <p>Bright flavours of tropical fruit & apple, honeyed yet
                     refreshing finish</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍷</span>
@@ -481,7 +492,6 @@
 </div>
 <p>Gooseberry, tropical fruits, subtle herbs. Crisp &
                     elegant</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍷</span>
@@ -491,7 +501,6 @@
 </div>
 <p>Clean, fresh & fruity with citrus & ripe pear
                     flavours</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍷</span>
@@ -501,7 +510,6 @@
 </div>
 <p>Peach, cream & lemon blossom. Juicy palate, crisp
                     finish</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -518,7 +526,6 @@
 <div class="price">Glass £6.65 / Bottle £22.95</div>
 </div>
 <p>Easy-drinking red with ripe fruit</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍷</span>
@@ -527,7 +534,6 @@
 <div class="price">Glass £6.95 / Bottle £22.95</div>
 </div>
 <p>Ripe raspberry & cherry with vanilla & spice</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍷</span>
@@ -536,7 +542,6 @@
 <div class="price">Glass £6.95 / Bottle £24.95</div>
 </div>
 <p>Rich red, rounded with plumy fruitiness</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍷</span>
@@ -545,7 +550,6 @@
 <div class="price">Bottle £28.95</div>
 </div>
 <p>Blackberry, plum & subtle oak complexity</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍷</span>
@@ -555,7 +559,6 @@
 </div>
 <p>Ripe, dark red, sweet fruitiness and savoury
                     richness</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍷</span>
@@ -564,7 +567,6 @@
 <div class="price">Bottle £29.95</div>
 </div>
 <p>Fairly light, softly fruity</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍷</span>
@@ -575,7 +577,6 @@
 </div>
 <p>Elegant Bordeaux with ripe dark fruit, cedar, and silky
                     tannins</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -593,7 +594,6 @@
 </div>
 <p>Off-dry, full of summer fruit flavours with a hint of
                     sweetness</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🌹</span>
@@ -603,7 +603,6 @@
 </div>
 <p>Fruity and refreshing with flavours of apricot, peach and
                     strawberries</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -620,7 +619,6 @@
 <div class="price">Bottle £28.95 / 20cl £8.95</div>
 </div>
 <p>Delicate, aromatic, with fresh peach & pear</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥂</span>
@@ -630,7 +628,6 @@
 </div>
 <p>Recreating the finest expression of the Lanson style with
                     each harvest</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥂</span>
@@ -640,7 +637,6 @@
 </div>
 <p>The excellence of Mo&euml;t & Chandon's Imperial Brut
                     champagne is based on an exceptionally rich blend</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥂</span>
@@ -651,7 +647,6 @@
 </div>
 <p>Elegant ros&eacute; Champagne from one of the finest
                     houses</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥂</span>
@@ -660,7 +655,6 @@
 <div class="price">Bottle £119.95</div>
 </div>
 <p>Full-bodied Champagne with depth and complexity</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -680,7 +674,6 @@
 </div>
 <p>Spiced rum. Amaretto. Pineapple. Coconut & lime
                     gelato.</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍸</span>
@@ -690,7 +683,6 @@
 </div>
 <p>Tequila. Mango. Orange. Lemon. Persian lime. Smoked
                     paprika salt rim.</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍸</span>
@@ -700,7 +692,6 @@
 </div>
 <p>Respirited Vodka. Baileys. Mr Black coffee liqueur.
                     Cioccolata.</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -715,7 +706,6 @@
 <div class="price">£9.50</div>
 </div>
 <p>Aperol. Prosecco. Soda.</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍸</span>
@@ -724,7 +714,6 @@
 <div class="price">£9.50</div>
 </div>
 <p>Respirited Vodka. Limoncello. Limonata.</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍸</span>
@@ -734,7 +723,6 @@
 </div>
 <p>Fiorente Italian Elderflower Liqueur. Prosecco.
                     Elderflower Tonic.</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -749,7 +737,6 @@
 <div class="price">£9.50</div>
 </div>
 <p>Spiced Rum, Lime, Mix Juice</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍸</span>
@@ -758,7 +745,6 @@
 <div class="price">£9.50</div>
 </div>
 <p>Bacardi, Lime, Soda, Mint, Sugar</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍸</span>
@@ -767,7 +753,6 @@
 <div class="price">£9.50</div>
 </div>
 <p>Archers, Vodka, Orange, Cranberry Juice</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -785,7 +770,6 @@
 </div>
 <p>Mango. Orange. Lemon. Persian lime. Soda. Smoked paprika
                     salt rim.</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍹</span>
@@ -794,7 +778,6 @@
 <div class="price">£7.50</div>
 </div>
 <p>Lime, Soda, Mint, Sugar</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍹</span>
@@ -803,7 +786,6 @@
 <div class="price">£7.50</div>
 </div>
 <p>Strawberry. Persian lime. Soda.</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -819,7 +801,6 @@
 <h3>San Miguel (330ml)</h3>
 <div class="price">£4.25</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍺</span>
@@ -827,7 +808,6 @@
 <h3>Moretti (330ml)</h3>
 <div class="price">£4.25</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍺</span>
@@ -835,7 +815,6 @@
 <h3>Peroni (330ml)</h3>
 <div class="price">£4.25</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍺</span>
@@ -843,7 +822,6 @@
 <h3>Corona (330ml)</h3>
 <div class="price">£4.25</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍺</span>
@@ -851,7 +829,6 @@
 <h3>Cobra (600ml)</h3>
 <div class="price">£6.50</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍺</span>
@@ -859,7 +836,6 @@
 <h3>Cobra (330ml)</h3>
 <div class="price">£4.25</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍺</span>
@@ -867,7 +843,6 @@
 <h3>Alcohol-free Beer</h3>
 <div class="price">£4.95</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍺</span>
@@ -875,7 +850,6 @@
 <h3>Cider</h3>
 <div class="price">£5.50</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍺</span>
@@ -883,7 +857,6 @@
 <h3>Draft Beer</h3>
 <div class="price">Half £4.25 / Pint £5.95</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍺</span>
@@ -891,7 +864,6 @@
 <h3>Shandy</h3>
 <div class="price">Pint £5.95 / Half £4.50</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -907,7 +879,6 @@
 <h3>Coke / Diet Coke / Lemonade</h3>
 <div class="price">£4.50</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥤</span>
@@ -915,7 +886,6 @@
 <h3>Tonic Water / Soda Water</h3>
 <div class="price">£4.50</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥤</span>
@@ -923,7 +893,6 @@
 <h3>Orange / Apple / Pineapple Juice</h3>
 <div class="price">£3.75</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥤</span>
@@ -931,7 +900,6 @@
 <h3>Water (Still/Sparkling, 375ml)</h3>
 <div class="price">£3.75</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥤</span>
@@ -939,7 +907,6 @@
 <h3>Pint of Any Soft Drinks</h3>
 <div class="price">£5.75</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -956,7 +923,6 @@
 <div class="price">£3.75</div>
 </div>
 <p>Various Sherry (50ml), Taylors LBV (50ml)</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥃</span>
@@ -964,7 +930,6 @@
 <h3>Vodka</h3>
 </div>
 <p>Smirnoff £3.75 &middot; Grey Goose £4.75</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥃</span>
@@ -973,7 +938,6 @@
 </div>
 <p>Gordon's Gin £3.75 &middot; Tanqueray Gin £3.75 &middot;
                     Hendrick's £4.75 &middot; Bombay Sapphire £4.75</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥃</span>
@@ -983,7 +947,6 @@
 <p>Bacardi White Rum £3.75 &middot; Captain Morgan £3.75
                     &middot; Malibu Coconut £3.75 &middot; Captain Morgan
                     Spiced £4.50</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥃</span>
@@ -994,7 +957,6 @@
                     Rare VSOP £4.75 &middot; Bells, Jameson £3.75 &middot;
                     Jack Daniels £4.75 &middot; Glenfiddich Single Malt
                     £4.75</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥃</span>
@@ -1005,7 +967,6 @@
 <p>Southern Comfort, Disaronno Amaretto, Campari,
                     Limoncello, Pimms (50ml), Baileys (50ml), Tia Maria,
                     Martini Dry/Sweet/Rosso, Tequila, Sambuca</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥃</span>
@@ -1014,7 +975,6 @@
 <div class="price">£4.75 each</div>
 </div>
 <p>Benedictine, Grand Marnier, Drambuie, Cointreau</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥃</span>
@@ -1022,7 +982,6 @@
 <h3>Mixers</h3>
 <div class="price">£1.20</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -1038,7 +997,6 @@
 <h3>Tea</h3>
 <div class="price">£2.50</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>☕</span>
@@ -1046,7 +1004,6 @@
 <h3>Herbal Tea</h3>
 <div class="price">£2.80</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>☕</span>
@@ -1054,7 +1011,6 @@
 <h3>Espresso</h3>
 <div class="price">Single £2.50 / Double £2.80</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>☕</span>
@@ -1062,7 +1018,6 @@
 <h3>Cappuccino</h3>
 <div class="price">£2.95</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>☕</span>
@@ -1070,7 +1025,6 @@
 <h3>Americano</h3>
 <div class="price">Black/White £2.50</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>☕</span>
@@ -1078,7 +1032,6 @@
 <h3>Latte</h3>
 <div class="price">£2.95</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>☕</span>
@@ -1086,7 +1039,6 @@
 <h3>Baileys Coffee</h3>
 <div class="price">£7.50</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>☕</span>
@@ -1094,7 +1046,6 @@
 <h3>Irish Coffee with Jameson</h3>
 <div class="price">£7.50</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>☕</span>
@@ -1102,7 +1053,6 @@
 <h3>Calypso Coffee (Tia Maria)</h3>
 <div class="price">£7.50</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>☕</span>
@@ -1110,7 +1060,6 @@
 <h3>Ice Latte</h3>
 <div class="price">£4.25</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>☕</span>
@@ -1118,7 +1067,6 @@
 <h3>Ice Americano</h3>
 <div class="price">£3.95</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -1144,7 +1092,6 @@
 <div class="price">£5.95</div>
 </div>
 <p>Please ask staff for details</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥗</span>
@@ -1153,7 +1100,6 @@
 <div class="price">£7.50</div>
 </div>
 <p>Houmous, Tzatziki, Olives, Warm pitta</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥗</span>
@@ -1162,7 +1108,6 @@
 <div class="price">£7.50</div>
 </div>
 <p>Tomato, Basil and Rocket</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥗</span>
@@ -1171,7 +1116,6 @@
 <div class="price">£7.95</div>
 </div>
 <p>Vegetable/Chicken gyoza &ndash; Steam/Fried</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥗</span>
@@ -1180,7 +1124,6 @@
 <div class="price">£8.50</div>
 </div>
 <p>Tomato, chilli, basil, herbs, crostini</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥗</span>
@@ -1189,7 +1132,6 @@
 <div class="price">£8.95</div>
 </div>
 <p>With tartar sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥗</span>
@@ -1198,7 +1140,6 @@
 <div class="price">£8.95</div>
 </div>
 <p>Served with homemade sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥗</span>
@@ -1207,7 +1148,6 @@
 <div class="price">£9.95</div>
 </div>
 <p>Garlic, chilli, butter with warm pitta, mix leaves</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥗</span>
@@ -1216,7 +1156,6 @@
 <div class="price">£12.95</div>
 </div>
 <p>Gin marinated, baby green tomato salsa & rocket</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥗</span>
@@ -1226,7 +1165,6 @@
 </div>
 <p>Crispy tortilla, jalape&ntilde;os, tomato salsa,
                     guacamole, sour cream, cheddar cheese</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥗</span>
@@ -1235,7 +1173,6 @@
 <div class="price">£9.95</div>
 </div>
 <p>Spinach, Hoisin, chilli, broccoli</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥗</span>
@@ -1245,7 +1182,6 @@
 </div>
 <p>Olives, tomato, houmous, warm pitta, extra virgin olive
                     oil</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥗</span>
@@ -1254,7 +1190,6 @@
 <div class="price">£7.95</div>
 </div>
 <p>With red hot sauce / sweet chilli sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -1273,7 +1208,6 @@
 <p>Salami Napoli, Salami Milano, Samosa, grilled prawn,
                     grilled halloumi, meat balls, meze and warm pitta
                     bread</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -1290,7 +1224,6 @@
 <div class="price">£8.95 / £14.95</div>
 </div>
 <p>Spaghetti with classic bolognaise sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍝</span>
@@ -1299,7 +1232,6 @@
 <div class="price">£9.95 / £15.95</div>
 </div>
 <p>Tomato, basil, parmesan with spaghetti</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍝</span>
@@ -1308,7 +1240,6 @@
 <div class="price">£10.95 / £16.95</div>
 </div>
 <p>Pancetta, shallots, Parma, egg yolk, cream sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍝</span>
@@ -1318,7 +1249,6 @@
 </div>
 <p>Red pepper, aubergine, basil pesto, cherry tomato,
                     shallots, crispy chicken and parmesan</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍝</span>
@@ -1328,7 +1258,6 @@
 </div>
 <p>Mixed seafood, cherry tomatoes, white wine, chilli,
                     garlic</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍝</span>
@@ -1337,7 +1266,6 @@
 <div class="price">£15.95</div>
 </div>
 <p>Dotterini tomatoes, Pomodoro sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -1359,7 +1287,6 @@
 </div>
 <p>Cos lettuce, heritage tomato, red onion, and burger
                     sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍔</span>
@@ -1369,7 +1296,6 @@
 </div>
 <p>Cheddar cheese, cos lettuce, heritage tomato, red onion,
                     and burger sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍔</span>
@@ -1379,7 +1305,6 @@
 </div>
 <p>Smoked cheese, cos lettuce, heritage tomato, red onion,
                     and burger sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍔</span>
@@ -1389,7 +1314,6 @@
 </div>
 <p>Cheddar cheese, cos lettuce, heritage tomato, red onion,
                     burger sauce; halloumi and egg</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍔</span>
@@ -1399,7 +1323,6 @@
 </div>
 <p>Grilled chicken, cos lettuce, heritage tomato, red onion,
                     and burger sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍔</span>
@@ -1409,7 +1332,6 @@
 </div>
 <p>Cheddar cheese, cos lettuce, heritage tomato, red onion,
                     and burger sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -1427,7 +1349,6 @@
 <div class="price">£25.95</div>
 </div>
 <p>Grilled vegetables</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥩</span>
@@ -1436,7 +1357,6 @@
 <div class="price">£26.95</div>
 </div>
 <p>Portobello mushroom, sun-blushed tomato, rocket</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥩</span>
@@ -1445,7 +1365,6 @@
 <div class="price">£34.95</div>
 </div>
 <p>Portobello mushroom, grilled asparagus</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥩</span>
@@ -1454,7 +1373,6 @@
 <div class="price">£32.95</div>
 </div>
 <p>Portobello mushroom, grilled asparagus</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥩</span>
@@ -1463,7 +1381,6 @@
 <div class="price">£31.95</div>
 </div>
 <p>With mushroom and creamy mash</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥩</span>
@@ -1473,7 +1390,6 @@
 </div>
 <p>Grilled sirloin, mixed leaves and honey mustard
                     dressing</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -1493,7 +1409,6 @@
 <div class="price">£18.95</div>
 </div>
 <p>With chips/steamed vegetables/mashed potatoes</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍗</span>
@@ -1502,7 +1417,6 @@
 <div class="price">£16.95</div>
 </div>
 <p>Cos lettuce, croutons with parmesan</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍗</span>
@@ -1511,7 +1425,6 @@
 <div class="price">£17.95</div>
 </div>
 <p>Crushed new potato, tomato salsa, rocket</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍗</span>
@@ -1520,7 +1433,6 @@
 <div class="price">£20.95</div>
 </div>
 <p>With fresh mango salsa and mango chutney</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍗</span>
@@ -1529,7 +1441,6 @@
 <div class="price">£20.95</div>
 </div>
 <p>Mashed potatoes, roasted vegetables and cream sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -1545,7 +1456,6 @@
 <h3>Triple Cooked Chips</h3>
 <div class="price">£3.95</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍟</span>
@@ -1553,7 +1463,6 @@
 <h3>Coleslaw</h3>
 <div class="price">£2.95</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍟</span>
@@ -1561,7 +1470,6 @@
 <h3>Garden Salad</h3>
 <div class="price">£4.95</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍟</span>
@@ -1569,7 +1477,6 @@
 <h3>Green Beans</h3>
 <div class="price">£3.95</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍟</span>
@@ -1577,7 +1484,6 @@
 <h3>Grilled Vegetables</h3>
 <div class="price">£5.50</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍟</span>
@@ -1585,7 +1491,6 @@
 <h3>Mash Potato</h3>
 <div class="price">£3.50</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍟</span>
@@ -1594,7 +1499,6 @@
 <div class="price">£4.95</div>
 </div>
 <p>Roasted potato, peppers, cherry tomato</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -1612,7 +1516,6 @@
 <div class="price">£6.50</div>
 </div>
 <p>Pastry Cream with Lemon</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍰</span>
@@ -1620,7 +1523,6 @@
 <h3>Chocolate Mousse</h3>
 <div class="price">£6.95</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍰</span>
@@ -1629,7 +1531,6 @@
 <div class="price">£4.00</div>
 </div>
 <p>Vanilla or Strawberry</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -1645,7 +1546,6 @@
 <h3>Dinner with Us (Mon &ndash; Thu)</h3>
 <div class="price">2 Course £22.95 / 3 Course £25.95</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🎉</span>
@@ -1653,7 +1553,6 @@
 <h3>Sunday Roast</h3>
 <div class="price">2 Course £21.95 / 3 Course £24.95</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🎉</span>
@@ -1661,7 +1560,6 @@
 <h3>Steak Special</h3>
 <div class="price">40% off on Tuesday</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -1688,7 +1586,6 @@
 </div>
 <p>Salmon fillet marinated with homemade tandoori
                     sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍢</span>
@@ -1697,7 +1594,6 @@
 <div class="price">£6.45</div>
 </div>
 <p>Grilled halloumi cheese wrapped in a soft chapati</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍢</span>
@@ -1706,7 +1602,6 @@
 <div class="price">£7.45</div>
 </div>
 <p>Chicken, spiced and served on a puree</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍢</span>
@@ -1716,7 +1611,6 @@
 </div>
 <p>Chicken wings mixed with herbs & spices, cooked in
                     charcoal oven</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍢</span>
@@ -1726,7 +1620,6 @@
 </div>
 <p>Light spiced chicken, cooked chillies, peppers &
                     yoghurt</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍢</span>
@@ -1735,7 +1628,6 @@
 <div class="price">£6.25</div>
 </div>
 <p>Marinated chicken or lamb cooked in charcoal oven</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍢</span>
@@ -1744,7 +1636,6 @@
 <div class="price">£6.00</div>
 </div>
 <p>Spicy mince lamb</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍢</span>
@@ -1754,7 +1645,6 @@
 </div>
 <p>Savoury filo pastry with homemade vegetables or minced
                     lamb</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍢</span>
@@ -1763,7 +1653,6 @@
 <div class="price">£5.45</div>
 </div>
 <p>Marinated paneer cooked in tandoori oven</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍢</span>
@@ -1773,7 +1662,6 @@
 </div>
 <p>Meat samosa, sheek kebab, lamb tikka, chicken tikka &
                     chicken wings</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍢</span>
@@ -1783,7 +1671,6 @@
 </div>
 <p>Vegetable samosas, mixed pakoras, onion bhaji and
                     paneer</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍢</span>
@@ -1792,7 +1679,6 @@
 <div class="price">£5.00</div>
 </div>
 <p>Marinated chicken or lamb cooked in a charcoal oven</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍢</span>
@@ -1802,7 +1688,6 @@
 </div>
 <p>Marinated in the bone chicken cooked in a charcoal
                     oven</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍢</span>
@@ -1812,7 +1697,6 @@
 </div>
 <p>Prawns cooked with spices & herbs served over puree
                     bread</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -1834,7 +1718,6 @@
 </div>
 <p>Barbecued chicken or lamb cubes cooked with masala
                     sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍛</span>
@@ -1843,7 +1726,6 @@
 <div class="price">£9.95 / £11.95</div>
 </div>
 <p>Cooked in a creamy sauce & ground cashew nut</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍛</span>
@@ -1853,7 +1735,6 @@
 </div>
 <p>Barbecued chicken cubes cooked with almonds & ghee in a
                     mild sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍛</span>
@@ -1862,7 +1743,6 @@
 <div class="price">£9.95 / £11.95</div>
 </div>
 <p>Cooked with homemade lightly seasoned sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍛</span>
@@ -1871,7 +1751,6 @@
 <div class="price">£9.95 / £11.95</div>
 </div>
 <p>Cooked with Balti spices in a rich spicy sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍛</span>
@@ -1881,7 +1760,6 @@
 </div>
 <p>Cooked with paprika, green peppers & onion in a medium
                     spicy sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍛</span>
@@ -1891,7 +1769,6 @@
 </div>
 <p>Cooked with pickles & citrus fruit in a medium spicy
                     sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍛</span>
@@ -1901,7 +1778,6 @@
 </div>
 <p>Cooked with garlic, green chilies, green peppers &
                     coriander</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍛</span>
@@ -1910,7 +1786,6 @@
 <div class="price">£9.95 / £11.95</div>
 </div>
 <p>Cooked with chili powder in a hot sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍛</span>
@@ -1920,7 +1795,6 @@
 </div>
 <p>Cooked with chili powder & potato in a very hot & spicy
                     sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍛</span>
@@ -1930,7 +1804,6 @@
 </div>
 <p>Cooked with fresh garlic, spinach & green peppers in a
                     medium spicy sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍛</span>
@@ -1940,7 +1813,6 @@
 </div>
 <p>Cooked with brown onion & garam masala in a medium spicy
                     sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍛</span>
@@ -1949,7 +1821,6 @@
 <div class="price">£9.95 / £11.95</div>
 </div>
 <p>Cooked with lentils in a hot, sweet and sour sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍛</span>
@@ -1958,7 +1829,6 @@
 <div class="price">£9.95 / £11.95</div>
 </div>
 <p>Cooked with hot, sweet and sour sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍛</span>
@@ -1968,7 +1838,6 @@
 </div>
 <p>Cooked with garlic, cherry tomatoes & coriander in a
                     medium sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍛</span>
@@ -1978,7 +1847,6 @@
 </div>
 <p>Cooked with mixed powder & coriander, for a rich spicy
                     taste</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -1996,7 +1864,6 @@
 </div>
 <p>Tender lamb cooked with fresh ginger, green pepper &
                     coriander in medium hot sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>⭐</span>
@@ -2006,7 +1873,6 @@
 </div>
 <p>Barbecued chicken cooked with yoghurt, ginger & coriander
                     in a madras hot sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>⭐</span>
@@ -2016,7 +1882,6 @@
 </div>
 <p>Fresh Bengali bullet chillis, roasted cumin seeds, fairly
                     hot</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>⭐</span>
@@ -2026,7 +1891,6 @@
 </div>
 <p>Off the bone tandoori chicken & spices, mincemeat along
                     with boiled eggs. Medium sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>⭐</span>
@@ -2036,7 +1900,6 @@
 </div>
 <p>Grilled jumbo king prawns cooked with almonds, coconut
                     milk and paneer cheese in a mild sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>⭐</span>
@@ -2046,7 +1909,6 @@
 </div>
 <p>Grilled king prawns cooked with yoghurt, ginger &
                     coriander in a madras hot sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>⭐</span>
@@ -2056,7 +1918,6 @@
 </div>
 <p>Grilled chicken or lamb cooked with fresh garlic, bullet
                     chillis & garnished with coriander</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>⭐</span>
@@ -2066,7 +1927,6 @@
 </div>
 <p>Barbecued chicken cooked with Goan herbs & spices in a
                     slightly hot sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>⭐</span>
@@ -2076,7 +1936,6 @@
 </div>
 <p>Chicken or Lamb cooked with chef's own prepared recipes
                     with medium spices</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>⭐</span>
@@ -2086,7 +1945,6 @@
 </div>
 <p>Chicken or Lamb marinated medium spice with specialty
                     prepared sauce</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -2104,7 +1962,6 @@
 <div class="price">£10.00 / £11.75</div>
 </div>
 <p>Marinated chicken or lamb cooked in charcoal oven</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🔥</span>
@@ -2113,7 +1970,6 @@
 <div class="price">£14.50</div>
 </div>
 <p>Lamb chops marinated with herbs and spices</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🔥</span>
@@ -2123,7 +1979,6 @@
 </div>
 <p>Chicken tikka, lamb tikka, sheek kebab, king prawn &
                     tandoori chicken</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🔥</span>
@@ -2132,7 +1987,6 @@
 <div class="price">£14.50</div>
 </div>
 <p>Jumbo king prawns marinated with herbs & spices</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🔥</span>
@@ -2142,7 +1996,6 @@
 </div>
 <p>Marinated on the bone chicken cooked in charcoal
                     oven</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🔥</span>
@@ -2151,7 +2004,6 @@
 <div class="price">£10.00 / £11.95</div>
 </div>
 <p>Cooked with green peppers, onions & tomatoes</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🔥</span>
@@ -2160,7 +2012,6 @@
 <div class="price">£10.25</div>
 </div>
 <p>Marinated paneer cooked in charcoal oven</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -2179,7 +2030,6 @@
 <h3>Chicken / Lamb Biryani</h3>
 <div class="price">£10.95</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍚</span>
@@ -2187,7 +2037,6 @@
 <h3>Vegetable Biryani</h3>
 <div class="price">£9.50</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍚</span>
@@ -2195,7 +2044,6 @@
 <h3>Chicken Tikka Biryani</h3>
 <div class="price">£11.00</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍚</span>
@@ -2203,7 +2051,6 @@
 <h3>Tiger Prawn Biryani</h3>
 <div class="price">£11.00</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍚</span>
@@ -2211,7 +2058,6 @@
 <h3>Tandoori King Prawn Biryani</h3>
 <div class="price">£14.95</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -2227,7 +2073,6 @@
 <h3>Vegetable Curry / Madras</h3>
 <div class="price">£5.75</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥦</span>
@@ -2235,7 +2080,6 @@
 <h3>Bombay Aloo</h3>
 <div class="price">£5.25</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥦</span>
@@ -2243,7 +2087,6 @@
 <h3>Cauliflower Bhaji</h3>
 <div class="price">£5.25</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥦</span>
@@ -2251,7 +2094,6 @@
 <h3>Onion Bhaji</h3>
 <div class="price">£5.25</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥦</span>
@@ -2260,7 +2102,6 @@
 <div class="price">£5.25</div>
 </div>
 <p>Lentils with saut&eacute;ed garlic</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥦</span>
@@ -2268,7 +2109,6 @@
 <h3>Mushroom Bhaji</h3>
 <div class="price">£5.25</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥦</span>
@@ -2277,7 +2117,6 @@
 <div class="price">£5.45</div>
 </div>
 <p>Spinach</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥦</span>
@@ -2286,7 +2125,6 @@
 <div class="price">£5.75</div>
 </div>
 <p>Spinach & Cheese</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥦</span>
@@ -2295,7 +2133,6 @@
 <div class="price">£5.75</div>
 </div>
 <p>Spinach & Potatoes</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥦</span>
@@ -2304,7 +2141,6 @@
 <div class="price">£5.45</div>
 </div>
 <p>Potato & Cauliflower</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥦</span>
@@ -2313,7 +2149,6 @@
 <div class="price">£4.75</div>
 </div>
 <p>Spiced Aubergine</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥦</span>
@@ -2322,7 +2157,6 @@
 <div class="price">£5.45</div>
 </div>
 <p>Spicy Okra</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥦</span>
@@ -2331,7 +2165,6 @@
 <div class="price">£5.25</div>
 </div>
 <p>Spicy Chickpeas</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🥦</span>
@@ -2340,7 +2173,6 @@
 <div class="price">£4.25</div>
 </div>
 <p>Chickpeas & Potatoes</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -2357,7 +2189,6 @@
 <div class="price">£3.75</div>
 </div>
 <p>Long Grain Basmati</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍚</span>
@@ -2366,7 +2197,6 @@
 <div class="price">£4.75</div>
 </div>
 <p>Fragrant Basmati</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍚</span>
@@ -2375,7 +2205,6 @@
 <div class="price">£5.45</div>
 </div>
 <p>Basmati fried with egg & peas</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍚</span>
@@ -2383,7 +2212,6 @@
 <h3>Mushroom Rice</h3>
 <div class="price">£5.00</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍚</span>
@@ -2391,7 +2219,6 @@
 <h3>Lime & Coriander Rice</h3>
 <div class="price">£5.00</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍚</span>
@@ -2400,7 +2227,6 @@
 <div class="price">£5.45</div>
 </div>
 <p>Minced Lamb Rice</p>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍚</span>
@@ -2408,7 +2234,6 @@
 <h3>Coconut Rice</h3>
 <div class="price">£5.45</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🍚</span>
@@ -2416,7 +2241,6 @@
 <h3>Vegetable Fried Rice</h3>
 <div class="price">£5.00</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -2432,7 +2256,6 @@
 <h3>Plain Naan</h3>
 <div class="price">£4.00</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🫓</span>
@@ -2440,7 +2263,6 @@
 <h3>Peshwari Naan</h3>
 <div class="price">£4.75</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🫓</span>
@@ -2448,7 +2270,6 @@
 <h3>Keema Naan</h3>
 <div class="price">£4.75</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🫓</span>
@@ -2456,7 +2277,6 @@
 <h3>Garlic Naan</h3>
 <div class="price">£4.75</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🫓</span>
@@ -2464,7 +2284,6 @@
 <h3>Chilli Cheese Naan</h3>
 <div class="price">£5.00</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🫓</span>
@@ -2472,7 +2291,6 @@
 <h3>Vegetable Naan</h3>
 <div class="price">£4.75</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🫓</span>
@@ -2480,7 +2298,6 @@
 <h3>Paratha</h3>
 <div class="price">£4.45</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🫓</span>
@@ -2488,7 +2305,6 @@
 <h3>Stuffed Paratha</h3>
 <div class="price">£4.75</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🫓</span>
@@ -2496,7 +2312,6 @@
 <h3>Tandoori Roti</h3>
 <div class="price">£4.00</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🫓</span>
@@ -2504,7 +2319,6 @@
 <h3>Chapati</h3>
 <div class="price">£3.00</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🫓</span>
@@ -2512,7 +2326,6 @@
 <h3>Puree</h3>
 <div class="price">£3.00</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🫓</span>
@@ -2520,7 +2333,6 @@
 <h3>Plain / Spicy Papadum</h3>
 <div class="price">£0.95</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🫓</span>
@@ -2528,7 +2340,6 @@
 <h3>Mango Chutney / Mixed Pickle / Onion Salad</h3>
 <div class="price">£0.95</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🫓</span>
@@ -2536,7 +2347,6 @@
 <h3>Mint Sauce / Tamarind Sauce</h3>
 <div class="price">£0.95</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
               <div class="menu-card glass">
 <span>🫓</span>
@@ -2544,7 +2354,6 @@
 <h3>Cucumber / Onion Raita / Plain Raita</h3>
 <div class="price">£2.00</div>
 </div>
-<a href="#" class="cart-btn">🛒 Add to Cart</a>
 </div>
             
 </div>
@@ -2555,6 +2364,25 @@
 
     <!-- Footer -->
     <footer>
+      <!-- Social links: replace each "#" with the restaurant's profile URL -->
+      <div class="social-links">
+        <a href="#" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+        </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Saffron+%26+Olive+135-137+Station+Rd+Sidcup+DA15+7AA" target="_blank" rel="noopener" aria-label="Google" title="Find us on Google">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.85 3.18-1.73 4.1-1.07 1.07-2.74 2.25-5.66 2.25-4.53 0-8.07-3.65-8.07-8.18s3.54-8.18 8.07-8.18c2.44 0 4.23.96 5.55 2.2l2.31-2.31C18.82 2.2 16.08.8 12.48.8 6.17.8.87 5.93.87 12.24s5.3 11.44 11.61 11.44c3.41 0 5.98-1.12 7.99-3.21 2.07-2.07 2.71-4.98 2.71-7.33 0-.73-.06-1.4-.17-1.97H12.48z"/></svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38A5.88 5.88 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13a5.88 5.88 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.88 5.88 0 0 0 2.13-1.38 5.88 5.88 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.38-2.13A5.88 5.88 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>
+        </a>
+      </div>
+
       <p>© 2026 <strong>Saffron & Olive</strong></p>
 
       <p>Mediterranean & Indian Cuisine</p>
